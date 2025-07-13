@@ -42,7 +42,6 @@ def get_reviews(place_id):
 
 @app.route("/api/add_place", methods=["POST"])
 def add_place():
-    # Если данные из multipart/form-data
     if 'photo' not in request.files:
         return jsonify({"success": False, "error": "Фото не загружено"}), 400
     file = request.files['photo']
@@ -54,7 +53,6 @@ def add_place():
     else:
         return jsonify({"success": False, "error": "Недопустимый формат файла"}), 400
 
-    # Остальные поля получаем из формы
     name = request.form.get("name")
     address = request.form.get("address")
     category = request.form.get("category")
@@ -86,4 +84,5 @@ def add_review():
     return jsonify({"success": True})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)

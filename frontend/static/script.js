@@ -172,14 +172,13 @@ document.getElementById("toggleAddPlaceBtn").addEventListener("click", () => {
 
 function populateCategorySelect() {
   const select = document.getElementById("categorySelect");
-  const categories = [...new Set(allPlaces.map(p => p.category))]; // уникальные
+  const categories = [...new Set(allPlaces.map(p => p.category))];
 
-  // Очистка и добавление опций
   select.innerHTML = '<option value="all">Все категории</option>';
   categories.forEach(cat => {
     const option = document.createElement("option");
     option.value = cat;
-    option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1); // с заглавной
+    option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     select.appendChild(option);
   });
 }

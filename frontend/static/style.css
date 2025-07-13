@@ -28,7 +28,6 @@ a {
   text-decoration: none;
 }
 
-/* Фильтры */
 #filters {
   text-align: center;
   margin-bottom: 25px;
@@ -142,7 +141,6 @@ button.toggle-reviews-btn:hover {
   margin-bottom: 10px;
 }
 
-/* Форма добавления */
 form#addPlaceForm {
   background: white;
   padding: 20px;
@@ -241,7 +239,7 @@ form#addPlaceForm button:hover {
 
 #addPlaceContainer {
   max-width: 600px;
-  margin: 15px auto; /* по центру */
+  margin: 15px auto; 
   padding: 16px;
   box-sizing: border-box;
 }
@@ -306,5 +304,5 @@ form#addPlaceForm button:hover {
 .header-logo img {
   max-width: 300px;
   height: auto;
-  border-radius: 12px; /* можно убрать, если не нужно скругление */
+  border-radius: 12px;
 }
