@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Сириус.Путеводитель</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" type="image/png" href="/static/Sirius.jpg">
+</head>
+<body>
+  <h1>Сириус.Путеводитель</h1>
+
+  <button id="toggleAddPlaceBtn" class="centered-btn">+ Добавить место</button>
+
+  <div id="addPlaceContainer" style="display:none; margin-top: 15px;">
+    <form id="addPlaceForm" enctype="multipart/form-data">
+      <input type="text" id="placeName" name="name" placeholder="Название" required />
+      <input type="text" id="placeAddress" name="address" placeholder="Адрес" required />
+      <input type="text" id="placeCategory" name="category" placeholder="Категория" required />
+      <input type="file" id="placePhoto" name="photo" accept="image/*" required />
+      <textarea id="placeDescription" name="description" placeholder="Описание" required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <!-- Далее фильтры и места -->
+  <div id="filters">
+    <button onclick="filterCategory('all')">Все</button>
+    <button onclick="filterCategory('музей')">Музеи</button>
+    <button onclick="filterCategory('парк')">Парки</button>
+    <button onclick="filterCategory('кафе')">Кафе</button>
+  </div>
+
+  <div id="places"></div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

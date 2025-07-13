@@ -1,0 +1,56 @@
+[
+  {
+    "place_id": 1,
+    "rating": 5,
+    "comment": "Очень интересно!",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 2,
+    "rating": 4,
+    "comment": "Приятное место для отдыха.",
+    "date": "2025-07-12"
+  },
+  {
+    "place_id": 3,
+    "rating": 5,
+    "comment": "павп",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 3,
+    "rating": 3,
+    "comment": "пап",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 3,
+    "rating": 4,
+    "comment": "вапва",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 3,
+    "rating": 4,
+    "comment": "павп",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 3,
+    "rating": 5,
+    "comment": "авпв",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 2,
+    "rating": 5,
+    "comment": "оаплдподлаволдп",
+    "date": "2025-07-13"
+  },
+  {
+    "place_id": 1,
+    "rating": 5,
+    "comment": "ваааау!",
+    "date": "2025-07-13"
+  }
+]

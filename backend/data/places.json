@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Научный музей",
+    "address": "ул. Знаний, 1",
+    "category": "музей",
+    "photo": "museum.jpg",
+    "description": "Современный научный музей."
+  },
+  {
+    "id": 2,
+    "name": "Центральный парк",
+    "address": "проспект Солнечный, 10",
+    "category": "парк",
+    "photo": "park.jpg",
+    "description": "Зеленая зона для отдыха и прогулок."
+  },
+  {
+    "id": 3,
+    "name": "ооооо",
+    "address": "ооо",
+    "category": "ооо",
+    "photo": "Soyjak2.jpg",
+    "description": "ооо"
+  },
+  {
+    "id": 4,
+    "name": "факел",
+    "address": "ул. Ежик, 8",
+    "category": "парк",
+    "photo": "b07edda1db5e021c54479afb78fe1c23.jpg",
+    "description": "gh"
+  },
+  {
+    "id": 5,
+    "name": "dhfkjdhfdkjs",
+    "address": "esdxz",
+    "category": "dddddddd",
+    "photo": "Sprite-0004-export.png",
+    "description": "ап"
+  }
+]
