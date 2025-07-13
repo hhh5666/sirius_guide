@@ -4,6 +4,7 @@ let filteredPlaces = [];
 async function loadPlaces() {
   const res = await fetch("/api/places");
   allPlaces = await res.json();
+  populateCategorySelect();
   filteredPlaces = allPlaces;
   renderPlaces();
 }
@@ -17,7 +18,9 @@ function renderPlaces() {
     div.innerHTML = `
       <h3>${place.name}</h3>
       <img src="/assets/${place.photo}" alt="${place.name} фото" class="place-photo" />
-      <p><strong>Адрес:</strong> ${place.address}</p>
+      <p><strong>Адрес:</strong> ${place.address} <button class="show-map-btn" data-place-id="${place.id}" data-address="${place.address}" style="margin-left:10px; font-size: 0.8em; padding: 3px 6px; cursor: pointer;">▼</button></p>
+      <div id="map-${place.id}" class="map-container" style="display:none; margin-top:10px;"></div>
+
       <p><strong>Категория:</strong> ${place.category}</p>
       <p>${place.description}</p>
       
@@ -56,6 +59,33 @@ function renderPlaces() {
         button.textContent = "Показать отзывы ▼";
       }
     });
+  });
+  setupMapButtons();
+}
+
+function setupMapButtons() {
+  document.querySelectorAll(".show-map-btn").forEach(btn => {
+    btn.onclick = () => {
+      const placeId = btn.dataset.placeId;
+      const address = btn.dataset.address;
+      const mapDiv = document.getElementById(`map-${placeId}`);
+
+      if (mapDiv.style.display === "none" || mapDiv.style.display === "") {
+        if (!mapDiv.dataset.loaded) {
+          const encoded = encodeURIComponent(address);
+          mapDiv.innerHTML = `<iframe
+            src="https://yandex.ru/map-widget/v1/?text=${encoded}"
+            width="100%" height="300" frameborder="0" allowfullscreen>
+          </iframe>`;
+          mapDiv.dataset.loaded = "true";
+        }
+        mapDiv.style.display = "block";
+        btn.textContent = "▲";
+      } else {
+        mapDiv.style.display = "none";
+        btn.textContent = "▼";
+      }
+    };
   });
 }
 
@@ -136,6 +166,26 @@ document.getElementById("toggleAddPlaceBtn").addEventListener("click", () => {
   } else {
     container.style.display = "none";
   }
+});
+
+
+
+function populateCategorySelect() {
+  const select = document.getElementById("categorySelect");
+  const categories = [...new Set(allPlaces.map(p => p.category))]; // уникальные
+
+  // Очистка и добавление опций
+  select.innerHTML = '<option value="all">Все категории</option>';
+  categories.forEach(cat => {
+    const option = document.createElement("option");
+    option.value = cat;
+    option.textContent = cat.charAt(0).toUpperCase() + cat.slice(1); // с заглавной
+    select.appendChild(option);
+  });
+}
+
+document.getElementById("categorySelect").addEventListener("change", (e) => {
+  filterCategory(e.target.value);
 });
 
 window.onload = loadPlaces;

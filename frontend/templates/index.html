@@ -5,9 +5,12 @@
   <title>Сириус.Путеводитель</title>
   <link rel="stylesheet" href="/static/style.css" />
   <link rel="icon" type="image/png" href="/static/Sirius.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Сириус.Путеводитель</h1>
+  <div class="header-logo">
+    <img src="/static/sirius_guide.png" alt="Сириус.Путеводитель" />
+  </div>
 
   <button id="toggleAddPlaceBtn" class="centered-btn">+ Добавить место</button>
 
@@ -22,12 +25,11 @@
     </form>
   </div>
 
-  <!-- Далее фильтры и места -->
   <div id="filters">
-    <button onclick="filterCategory('all')">Все</button>
-    <button onclick="filterCategory('музей')">Музеи</button>
-    <button onclick="filterCategory('парк')">Парки</button>
-    <button onclick="filterCategory('кафе')">Кафе</button>
+    <label for="categorySelect">Фильтр по категории:</label>
+    <select id="categorySelect">
+      <option value="all">Все категории</option>
+    </select>
   </div>
 
   <div id="places"></div>
