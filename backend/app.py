@@ -85,5 +85,6 @@ def add_review():
     save_data("data/reviews.json", data)
     return jsonify({"success": True})
 
-if __name__ == "__main__":
-    app.run(debug=False)
+if name == "main":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
